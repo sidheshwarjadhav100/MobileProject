@@ -21,9 +21,9 @@ public class MobileController {
 
 	}
 
-	public static Product[] updateMobilesController(int oldid) {
+	public static String updateMobilesController(int oldid) {
 
-		Product[] updateproducts = MobileService.updateProductService(oldid);
+		String updateproducts = MobileService.updateProductService(oldid);
 
 		return updateproducts;
 	}

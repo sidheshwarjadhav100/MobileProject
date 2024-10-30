@@ -46,10 +46,11 @@ public class MobileDao {
 
 	}
 
-	public static Product[] updateProductDao(int oldid) {
+	public static String updateProductDao(int oldid) {
 
 		Scanner sc = new Scanner(System.in);
-
+		String messagesuc = "Data Updated Successfully";
+		
 		for (int i = 0; i < size; i++) {
 
 			if (arr[i].getId() == oldid) {
@@ -68,13 +69,10 @@ public class MobileDao {
 				arr[i].setSeries(series);
 				arr[i].setPrice(price);
 			}
-//				else if(arr[i].getId() != oldid) {
-//					System.out.println("Please Re-enter");
-//				}
 
 		}
+		return messagesuc;
 
-		return null;
 	}
 
 	public static Product[] deleteProductDao(int delid) {

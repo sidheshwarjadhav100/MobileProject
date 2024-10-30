@@ -19,9 +19,9 @@ public class MobileService {
 
 	}
 
-	public static Product[] updateProductService(int oldid) {
+	public static String updateProductService(int oldid) {
 
-		Product[] updateproducts = MobileDao.updateProductDao(oldid);
+		String updateproducts = MobileDao.updateProductDao(oldid);
 
 		return updateproducts;
 
