@@ -5,9 +5,9 @@ import com.sid.service.MobileService;
 
 public class MobileController {
 
-	public static Product[] addProductcontroler(Product[] add) {
+	public static String addProductcontroler(Product[] add) {
 
-		Product[] addproduct = MobileService.addProductService(add);
+		String addproduct = MobileService.addProductService(add);
 
 		return addproduct;
 
@@ -28,9 +28,9 @@ public class MobileController {
 		return updateproducts;
 	}
 
-	public static Product[] deleteMobilesController(int delid) {
-		Product[] deleteproducts = MobileService.deleteProductService(delid);
-		return null;
+	public static String deleteMobilesController(int delid) {
+		String deleteproducts = MobileService.deleteProductService(delid);
+		return deleteproducts;
 
 	}
 

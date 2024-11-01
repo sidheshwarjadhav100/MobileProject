@@ -1,5 +1,9 @@
 package com.sid.client;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.Reader;
 import java.util.Scanner;
 
 import com.sid.controller.MobileController;
@@ -10,7 +14,8 @@ public class ShreeSaiMobileClient {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-
+		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+		Product[] addproduct = null;
 		while (true) {
 
 			System.out.println("---------------------------");
@@ -23,7 +28,6 @@ public class ShreeSaiMobileClient {
 			System.out.println("4. Delete Product from Data Base");
 			System.out.println("5. Exit");
 			System.out.println();
-
 			int choice = 0;
 
 			try {
@@ -36,37 +40,47 @@ public class ShreeSaiMobileClient {
 			}
 			switch (choice) {
 
+			// Add Product
 			case 1: {
+				int capacity = 0;
+				try {
+					System.out.println("Enter How Many Table do You Want To Add");
+					try {
+						capacity = sc.nextInt();
+						new MobileDao(capacity);// pass constructor
+					} catch (Exception e) {
+						System.out.println("ddfdff");
+						break;
+					}
 
-				System.out.println("Enter How Many Table do You Want To Add");
-				int capacity = sc.nextInt();
-				new MobileDao(capacity);// pass constructor
-				Product[] addproduct = new Product[capacity];
+					addproduct = new Product[capacity];
+					for (int i = 0; i < capacity; i++) {
 
-				for (int i = 0; i < capacity; i++) {
+						int id = 0;
+						String cname = null;
+						String series = null;
+						int price = 0;
+						System.out.println("Enter id");
+						id = sc.nextInt();
+						System.out.println("Enter Company name");
+						cname = sc.next();
+						System.out.println("Enter Series ");
+						series = sc.next();
+						System.out.println("enter price");
+						price = sc.nextInt();
+						addproduct[i] = new Product(id, cname, series, price);
 
-					int id = 0;
-					String cname = null;
-					String series = null;
-					int price = 0;
-
-					System.out.println("Enter id");
-					id = sc.nextInt();
-					System.out.println("Enter Company name");
-					cname = sc.next();
-					System.out.println("Enter Series ");
-					series = sc.next();
-					System.out.println("enter price");
-					price = sc.nextInt();
-
-					addproduct[i] = new Product(id, cname, series, price);
-
+					}
+				} catch (Exception e) {
+					System.out.println("Execution terminate due to invalid input...");
+					break;
 				}
-				MobileController.addProductcontroler(addproduct);
-
+				String ack = MobileController.addProductcontroler(addproduct);
+				System.out.println(ack);
 				break;
 
 			}
+			// Display Product
 			case 2: {
 
 				Product[] allproducts = MobileController.getAllMobilesController();
@@ -77,6 +91,7 @@ public class ShreeSaiMobileClient {
 				break;
 			}
 
+			// Update Product
 			case 3: {
 				try {
 					System.out.println("Enter id which you want to update");
@@ -86,18 +101,25 @@ public class ShreeSaiMobileClient {
 					break;
 
 				} catch (Exception e) {
-					e.printStackTrace();
+					System.out.println("Execution terminate due to invalid input...");
+					break;
 				}
 
 			}
 
+			// Delete Product
 			case 4: {
-				System.out.println("case 4 for delete");
+				try {
+					System.out.println("Enter id which you want to delete");
+					int delid = sc.nextInt();
+					String ack = MobileController.deleteMobilesController(delid);
+					System.out.println(ack);
 
-				System.out.println("Enter id which you want to delete");
-				int delid = sc.nextInt();
+				} catch (Exception e) {
+					System.out.println("Execution terminate due to invalid input...");
+					break;
 
-				MobileController.deleteMobilesController(delid);
+				}
 
 				break;
 			}

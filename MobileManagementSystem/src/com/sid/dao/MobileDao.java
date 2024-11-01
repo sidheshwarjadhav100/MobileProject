@@ -21,20 +21,26 @@ public class MobileDao {
 
 	public static Product arr[] = new Product[capacity];// static array declared
 
-	public static Product[] addProductDao(Product[] add) {
-
+	public static String addProductDao(Product[] add) {
+		String msg="Data Added Successfully";
+	String	msgfail="Something Went Wrong";
+		int count=0;
 		for (Product product : add) {
 			if (size < capacity) {
-
-				arr[size++] = product;// save one by one product value in arry[].
+				
+				arr[size++] = product;// save one by one product value in array[].
+				count++;
 			} else {
 				System.out.println("Array  size full");
 			}
+		}if (count ==0) {
+			return msgfail;
+		} else {
+			return msg;
+
 		}
 
-		System.out.println("Added Successfully");
-
-		return add;
+		
 
 	}
 
@@ -49,11 +55,14 @@ public class MobileDao {
 	public static String updateProductDao(int oldid) {
 
 		Scanner sc = new Scanner(System.in);
+		int count = 0;
 		String messagesuc = "Data Updated Successfully";
-		
+		String messagefail = "Id is not present";
+
 		for (int i = 0; i < size; i++) {
 
 			if (arr[i].getId() == oldid) {
+				count++;
 
 				System.out.println("Enter Updated id");
 				int uid = sc.nextInt();
@@ -71,28 +80,36 @@ public class MobileDao {
 			}
 
 		}
-		return messagesuc;
+		if (count == 0) {
+			return messagefail;
 
+		} else {
+			return messagesuc;
+		}
 	}
 
-	public static Product[] deleteProductDao(int delid) {
-		System.out.println("this is deleteProductDao ");
+	public static String deleteProductDao(int delid) {
+		String msgsuc="Product Deleted Successfully.";
+		String msgfail="Invalid Id";
+		int count=0;
+		
 
 		for (int i = 0; i < size; i++) {
 			if (arr[i].getId() == delid) {
-
+				count++;
 				arr[i] = arr[size - 1];
 				arr[size - 1] = null;
 				size--;
-				// arr[size--] = product;// delete array size value in arry[].
-
-			} else {
-				System.out.println("envalid id");
 
 			}
+		}if (count==0) {
+			return msgfail;
+			
+		}else {
+			return msgsuc;
+
 		}
 
-		return null;
-	}
+	}		
 
 }

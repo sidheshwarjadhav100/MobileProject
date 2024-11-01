@@ -5,10 +5,10 @@ import com.sid.entity.Product;
 
 public class MobileService {
 
-	public static Product[] addProductService(Product[] add) {
+	public static String addProductService(Product[] add) {
 
-		Product[] addproduct = MobileDao.addProductDao(add);
-		return null;
+		String addproduct = MobileDao.addProductDao(add);
+		return addproduct;
 	}
 
 	public static Product[] getAllProductService() {
@@ -27,10 +27,10 @@ public class MobileService {
 
 	}
 
-	public static Product[] deleteProductService(int delid) {
-		Product[] deleteproducts = MobileDao.deleteProductDao(delid);
+	public static String deleteProductService(int delid) {
+		String deleteproducts = MobileDao.deleteProductDao(delid);
 
-		return null;
+		return deleteproducts;
 	}
 
 }
