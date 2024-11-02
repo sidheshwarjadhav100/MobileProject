@@ -1,11 +1,8 @@
 package com.sid.client;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.Reader;
 import java.util.Scanner;
-
 import com.sid.controller.MobileController;
 import com.sid.dao.MobileDao;
 import com.sid.entity.Product;
@@ -35,7 +32,7 @@ public class ShreeSaiMobileClient {
 				choice = sc.nextInt();
 
 			} catch (Exception e) {
-				System.out.println("Execution terminate due to invalid input...");
+				System.out.println("Execution terminated due to invalid input...");
 				break;
 			}
 			switch (choice) {
@@ -49,7 +46,7 @@ public class ShreeSaiMobileClient {
 						capacity = sc.nextInt();
 						new MobileDao(capacity);// pass constructor
 					} catch (Exception e) {
-						System.out.println("ddfdff");
+						System.out.println("Execution terminated due to invalid input...");
 						break;
 					}
 
@@ -72,7 +69,7 @@ public class ShreeSaiMobileClient {
 
 					}
 				} catch (Exception e) {
-					System.out.println("Execution terminate due to invalid input...");
+					System.out.println("Execution terminated due to invalid input...");
 					break;
 				}
 				String ack = MobileController.addProductcontroler(addproduct);
@@ -101,7 +98,7 @@ public class ShreeSaiMobileClient {
 					break;
 
 				} catch (Exception e) {
-					System.out.println("Execution terminate due to invalid input...");
+					System.out.println("Execution terminated due to invalid input...");
 					break;
 				}
 
@@ -116,7 +113,7 @@ public class ShreeSaiMobileClient {
 					System.out.println(ack);
 
 				} catch (Exception e) {
-					System.out.println("Execution terminate due to invalid input...");
+					System.out.println("Execution terminated due to invalid input...");
 					break;
 
 				}
@@ -134,6 +131,7 @@ public class ShreeSaiMobileClient {
 			}
 
 			}
+
 			if (choice == 5) {
 				break;
 
