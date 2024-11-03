@@ -1,7 +1,5 @@
 package com.sid.client;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.util.Scanner;
 import com.sid.controller.MobileController;
 import com.sid.dao.MobileDao;
@@ -11,8 +9,8 @@ public class ShreeSaiMobileClient {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
 		Product[] addproduct = null;
+		int exitCount = 0;
 		while (true) {
 
 			System.out.println("---------------------------");
@@ -23,7 +21,13 @@ public class ShreeSaiMobileClient {
 			System.out.println("2. Display Product from Data Base");
 			System.out.println("3. Update Product into Data Base");
 			System.out.println("4. Delete Product from Data Base");
-			System.out.println("5. Exit");
+
+			if (exitCount > 0) {
+				System.out.println("5. Exit");
+
+			}
+			exitCount++;
+
 			System.out.println();
 			int choice = 0;
 
@@ -133,6 +137,7 @@ public class ShreeSaiMobileClient {
 			}
 
 			if (choice == 5) {
+				System.out.println("Thank You....!");
 				break;
 
 			}

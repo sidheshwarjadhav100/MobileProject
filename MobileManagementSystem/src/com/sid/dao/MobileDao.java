@@ -22,25 +22,24 @@ public class MobileDao {
 	public static Product arr[] = new Product[capacity];// static array declared
 
 	public static String addProductDao(Product[] add) {
-		String msg="Data Added Successfully";
-	String	msgfail="Something Went Wrong";
-		int count=0;
+		String msg = "Data Added Successfully";
+		String msgfail = "Something Went Wrong";
+		int count = 0;
 		for (Product product : add) {
 			if (size < capacity) {
-				
+
 				arr[size++] = product;// save one by one product value in array[].
 				count++;
 			} else {
 				System.out.println("Array  size full");
 			}
-		}if (count ==0) {
+		}
+		if (count == 0) {
 			return msgfail;
 		} else {
 			return msg;
 
 		}
-
-		
 
 	}
 
@@ -89,10 +88,9 @@ public class MobileDao {
 	}
 
 	public static String deleteProductDao(int delid) {
-		String msgsuc="Product Deleted Successfully.";
-		String msgfail="Invalid Id";
-		int count=0;
-		
+		String msgsuc = "Product Deleted Successfully.";
+		String msgfail = "Invalid Id";
+		int count = 0;
 
 		for (int i = 0; i < size; i++) {
 			if (arr[i].getId() == delid) {
@@ -102,14 +100,15 @@ public class MobileDao {
 				size--;
 
 			}
-		}if (count==0) {
+		}
+		if (count == 0) {
 			return msgfail;
-			
-		}else {
+
+		} else {
 			return msgsuc;
 
 		}
 
-	}		
+	}
 
 }
