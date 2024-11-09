@@ -13,17 +13,21 @@ public class ShreeSaiMobileClient {
 		int exitCount = 0;
 		while (true) {
 
-			System.out.println("---------------------------");
-			System.out.println("            Menu           ");
-			System.out.println("---------------------------");
-
-			System.out.println("1. Add Product into Data Base");
-			System.out.println("2. Display Product from Data Base");
-			System.out.println("3. Update Product into Data Base");
-			System.out.println("4. Delete Product from Data Base");
+			System.out.println("------------------------------------");
+			System.out.printf("|%-20s|\n", "      Menu    ");
+			System.out.println("---------------------");
+			System.out.printf("|%-20s|\n", "1. Add Product ");
+			System.out.println("---------------------");
+			System.out.printf("|%-20s|\n", "2. Display Product ");
+			System.out.println("---------------------");
+			System.out.printf("|%-20s|\n", "3. Update Product ");
+			System.out.println("---------------------");
+			System.out.printf("|%-20s|\n", "4. Delete Product ");
+			System.out.println("---------------------");
 
 			if (exitCount > 0) {
-				System.out.println("5. Exit");
+				System.out.printf("|%-20s|\n", "5. Exit");
+				System.out.println("---------------------");
 
 			}
 			exitCount++;
