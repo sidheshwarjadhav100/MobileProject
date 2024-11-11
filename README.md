@@ -1,4 +1,4 @@
-# Shree Sai Mobile Inventory Management System
+# Mobile Inventory Management System
 
 ## Project Overview
 
