@@ -1,8 +1,8 @@
-# Mobile Inventory Management System
+# MobileStockMaster
 
 ## Project Overview
 
-The **Mobile Inventory Management System** is a console-based Java application built to manage mobile product data. It allows users to perform essential CRUD (Create, Read, Update, Delete) operations on a list of products, making it a robust tool for inventory management. The system is built using **Core Java**, and it follows the **MVC (Model-View-Controller)** architectural pattern to ensure clean separation of concerns, maintainability, and scalability.
+The **MobileStockMaster** is a console-based Java application built to manage mobile product data. It allows users to perform essential CRUD (Create, Read, Update, Delete) operations on a list of products, making it a robust tool for inventory management. The system is built using **Core Java**, and it follows the **MVC (Model-View-Controller)** architectural pattern to ensure clean separation of concerns, maintainability, and scalability.
 
 ## Features
 
@@ -18,3 +18,7 @@ The **Mobile Inventory Management System** is a console-based Java application b
 - **OOP (Object-Oriented Programming)**: Encapsulation for the `Product` class, ensuring data protection.
 - **MVC Architecture**: Separate layers for Controller, Service, and Data Access (DAO) to organize the logic and ensure easy maintenance.
 - **Console Interface**: Simple command-line interface (CLI) for interacting with the application.
+
+
+**For any questions or feedback, feel free to reach out to** **sidheshwarjadhav100@gmail.com**
+
